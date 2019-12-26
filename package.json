@@ -16,11 +16,11 @@
     "mongoose": "^5.8.3"
   },
   "devDependencies": {
-    "eslint-config-codingmiles": "https://github.com/ankur-agarwal/eslint-config-codingmiles.git"
+    "eslint-config-codingmiles": "^0.0.2",
+    "xo": "^0.25.3"
   },
   "xo": {
     "extends": [
-      "xo",
       "codingmiles"
     ]
   }
