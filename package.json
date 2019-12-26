@@ -14,5 +14,14 @@
     "express-validator": "^6.3.0",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.8.3"
+  },
+  "devDependencies": {
+    "eslint-config-codingmiles": "https://github.com/ankur-agarwal/eslint-config-codingmiles.git"
+  },
+  "xo": {
+    "extends": [
+      "xo",
+      "codingmiles"
+    ]
   }
 }

@@ -1,0 +1,13 @@
+- Eslint
+
+- Refactor existing code
+- logout
+- Ease out integration with express
+- Configurable secret to the app
+- Should work with any user model
+- Ability to restrict other apis using helpers
+- Update README
+
+
+
+- Forgot password

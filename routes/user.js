@@ -7,7 +7,7 @@ const router = express.Router() // eslint-disable-line new-cap
 
 const auth = require('../middleware/auth')
 
-let userModel;
+let UserModel
 
 router.post(
 	'/signup',
@@ -31,7 +31,7 @@ router.post(
 		const { username, password, email } = req.body
 
 		try {
-			let user = await userModel.findOne({ email })
+			let user = await UserModel.findOne({ email })
 
 			console.table(user)
 			if (user) {
@@ -40,7 +40,7 @@ router.post(
 				})
 			}
 
-			user = new userModel({
+			user = new UserModel({
 				username,
 				email,
 				password
@@ -98,7 +98,7 @@ router.post(
 
 		const { email, password } = req.body
 		try {
-			const user = await userModel.findOne({
+			const user = await UserModel.findOne({
 				email
 			})
 			if (!user) {
@@ -147,8 +147,8 @@ router.post(
 
 router.get('/me', auth, async (req, res) => {
 	try {
-		// request.user is getting fetched from Middleware after token authentication
-		const user = await userModel.findById(req.user.id)
+		// Request.user is getting fetched from Middleware after token authentication
+		const user = await UserModel.findById(req.user.id)
 		res.json(user)
 	} catch (error) {
 		if (error) {
@@ -161,6 +161,6 @@ router.get('/me', auth, async (req, res) => {
 })
 
 module.exports = ({ user }) => {
-	userModel = user
+	UserModel = user
 	return router
 }
