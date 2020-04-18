@@ -1,6 +1,6 @@
 {
   "name": "express-mongo-auth-routes",
-  "version": "1.0.1",
+  "version": "0.0.1",
   "description": "Pluggable routes for auth using Express and Mongo",
   "main": "index.js",
   "repository": "https://github.com/ankur-agarwal/express-mongo-auth-routes.git",
