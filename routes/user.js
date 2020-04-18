@@ -12,9 +12,6 @@ let UserModel
 router.post(
 	'/signup',
 	[
-		check('username', 'Please Enter a Valid Username')
-			.not()
-			.isEmpty(),
 		check('email', 'Please enter a valid email').isEmail(),
 		check('password', 'Please enter a valid password').isLength({
 			min: 6
@@ -28,7 +25,7 @@ router.post(
 			})
 		}
 
-		const { username, password, email } = req.body
+		const { password, email } = req.body
 
 		try {
 			let user = await UserModel.findOne({ email })
@@ -41,7 +38,6 @@ router.post(
 			}
 
 			user = new UserModel({
-				username,
 				email,
 				password
 			})
